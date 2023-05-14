@@ -10,6 +10,7 @@
 #include <limits.h>
 #include <sys/stat.h>
 #include <fcntl.h>
+#include <ctype.h>
 
 #define DELIM "$ \t\n\r"
 
@@ -47,7 +48,8 @@ typedef struct instruction_s
 void push_func(stack_t **stack, unsigned int line_number);
 void add_node(stack_t **stack, int n);
 void pall_func(stack_t **stack, unsigned int line_number);
-
+char *trim(char *str);
+int is_int(char *s);
 
 
 #endif

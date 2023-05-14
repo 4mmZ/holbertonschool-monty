@@ -33,11 +33,16 @@ int main(int argc, char **argv)
     {
         line_number++;
 
-        // Eliminar el caracter '\n' de la línea
-        line[strcspn(line, "\n")] = '\0';
+        // Eliminar el caracter '\n' de la línea y eliminar los espacios en blanco al principio y al final
+        char *trimmed_line = trim(line);
+
+        // Skip empty lines
+        if (strlen(trimmed_line) == 0) {
+            continue;
+        }
 
         // Obtener el opcode y los argumentos de la línea
-        char *opcode = strtok(line, " \n$");
+        char *opcode = strtok(trimmed_line, " \n$");
 
         // Buscar el opcode en la tabla de opcodes y llamar a la función correspondiente
         int i;

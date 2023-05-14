@@ -1,23 +1,5 @@
 #include "monty.h"
 
-int is_int(char *s)
-{
-    int i = 0;
-
-    if (s == NULL)
-        return (0);
-
-    if (s[0] == '-' || s[0] == '+')
-        i = 1;
-
-    for (; s[i] != '\0'; i++)
-    {
-        if (s[i] < '0' || s[i] > '9')
-            return (0);
-    }
-
-    return (1);
-}
 
 void push_func(stack_t **stack, unsigned int line_number)
 {
