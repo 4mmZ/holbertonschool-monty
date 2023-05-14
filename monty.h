@@ -11,6 +11,8 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 
+#define DELIM "$ \t\n\r"
+
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -40,6 +42,12 @@ typedef struct instruction_s
         char *opcode;
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
+
+
+void push_func(stack_t **stack, unsigned int line_number);
+void add_node(stack_t **stack, int n);
+void pall_func(stack_t **stack, unsigned int line_number);
+
 
 
 #endif
