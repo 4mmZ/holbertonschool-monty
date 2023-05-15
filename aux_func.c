@@ -1,5 +1,23 @@
 #include "monty.h"
 
+
+void free_stack(stack_t **stack)
+{
+	stack_t *aux = *stack;
+	
+	if (*stack == NULL)
+	{
+	return;
+	}
+	while(*stack)
+	{
+	aux = (*stack)->next;
+	free(*stack);
+	*stack = aux;
+	}
+}
+
+
 int is_int(char *s)
 {
     int i = 0;

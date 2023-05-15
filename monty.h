@@ -50,6 +50,7 @@ void add_node(stack_t **stack, int n);
 void pall_func(stack_t **stack, unsigned int line_number);
 char *trim(char *str);
 int is_int(char *s);
+void free_stack(stack_t **stack);
 
 
 #endif

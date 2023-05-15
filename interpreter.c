@@ -63,6 +63,7 @@ int main(int argc, char **argv)
 
     // Liberar la memoria utilizada
     fclose(file);
+    free_stack(&stack);
     if (line)
         free(line);
 }
