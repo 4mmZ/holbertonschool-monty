@@ -109,3 +109,38 @@ void swap_func(stack_t **stack, unsigned int line_number)
         top->prev = second;
         *stack = second;
 }
+
+void add_func(stack_t **stack, unsigned int line_number)
+{
+
+        (void)line_number;
+        
+        if (*stack == NULL || (*stack)->next == NULL)
+        {
+                fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
+                exit(EXIT_FAILURE);
+        }
+        
+        stack_t *top = *stack;
+        stack_t *second = top->next;
+        
+        int result = top->n + second->n;
+        
+        stack_t *new_node = malloc(sizeof(stack_t));
+        if (new_node == NULL)
+        {
+                fprintf(stderr, "Error: Failed to allocate memory\n");
+                exit(EXIT_FAILURE);
+        }
+
+        new_node->n = result;
+        new_node->prev = NULL;
+        new_node->next = second->next;
+        if (second->next != NULL)
+                second->next->prev = new_node;
+
+        free(top);
+        free(second);
+
+        *stack = new_node;
+}
