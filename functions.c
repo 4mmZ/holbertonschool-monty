@@ -48,3 +48,21 @@ void add_node(stack_t **stack, int n)
 
         *stack = new_node;
 }
+
+void pint_func(stack_t **stack, unsigned int line_number)
+{
+        stack_t *tmp = *stack;
+
+        (void)line_number;
+
+        if (tmp) 
+        {
+                printf("%d\n", tmp->n);
+        }
+        else
+        {
+                fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
+                exit(EXIT_FAILURE);
+        }
+
+}
