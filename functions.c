@@ -1,7 +1,8 @@
 #include "monty.h"
 
 
-void push_func(stack_t **stack, unsigned int line_number)
+void
+push_func(stack_t **stack, unsigned int line_number)
 {
 	char *arg = strtok(NULL, DELIM);
 	int n;
@@ -16,7 +17,8 @@ void push_func(stack_t **stack, unsigned int line_number)
 	add_node(stack, n);
 }
 
-void pall_func(stack_t **stack, unsigned int line_number)
+void
+pall_func(stack_t **stack, unsigned int line_number)
 {
 	stack_t *tmp = *stack;
 
@@ -29,7 +31,8 @@ void pall_func(stack_t **stack, unsigned int line_number)
 	}
 }
 
-void add_node(stack_t **stack, int n)
+void
+add_node(stack_t **stack, int n)
 {
 	stack_t *new_node = malloc(sizeof(stack_t));
 
@@ -49,7 +52,8 @@ void add_node(stack_t **stack, int n)
 	*stack = new_node;
 }
 
-void pint_func(stack_t **stack, unsigned int line_number)
+void
+pint_func(stack_t **stack, unsigned int line_number)
 {
 	stack_t *tmp = *stack;
 
@@ -67,7 +71,8 @@ void pint_func(stack_t **stack, unsigned int line_number)
 
 }
 
-void pop_func(stack_t **stack, unsigned int line_number)
+void
+pop_func(stack_t **stack, unsigned int line_number)
 {
 	(void)line_number;
 
@@ -85,7 +90,8 @@ void pop_func(stack_t **stack, unsigned int line_number)
 	free(node_to_remove);
 }
 
-void swap_func(stack_t **stack, unsigned int line_number)
+void
+swap_func(stack_t **stack, unsigned int line_number)
 {
 	(void)line_number;
 
@@ -108,7 +114,8 @@ void swap_func(stack_t **stack, unsigned int line_number)
 	*stack = second;
 }
 
-void add_func(stack_t **stack, unsigned int line_number)
+void
+add_func(stack_t **stack, unsigned int line_number)
 {
 
 	(void)line_number;

@@ -1,6 +1,7 @@
 #include "monty.h"
 
-int main(int argc, char **argv)
+int
+main(int argc, char **argv)
 {
 FILE *file;
 char *line = NULL;

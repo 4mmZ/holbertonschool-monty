@@ -1,7 +1,8 @@
 #include "monty.h"
 
 
-void free_stack(stack_t **stack)
+void
+free_stack(stack_t **stack)
 {
 	stack_t *aux = *stack;
 
@@ -18,7 +19,8 @@ void free_stack(stack_t **stack)
 }
 
 
-int is_int(char *s)
+int
+is_int(char *s)
 {
 	int i = 0;
 
@@ -37,7 +39,8 @@ int is_int(char *s)
 	return (1);
 }
 
-char *trim(char *str)
+char
+*trim(char *str)
 {
 	char *end;
 
