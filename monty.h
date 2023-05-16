@@ -52,6 +52,6 @@ char *trim(char *str);
 int is_int(char *s);
 void free_stack(stack_t **stack);
 void pint_func(stack_t **stack, unsigned int line_number);
-
+void pop_func(stack_t **stack, unsigned int line_number);
 
 #endif
