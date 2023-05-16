@@ -85,3 +85,27 @@ void pop_func(stack_t **stack, unsigned int line_number)
 
         free(node_to_remove);
 }
+
+void swap_func(stack_t **stack, unsigned int line_number)
+{
+        (void)line_number;
+
+        if (*stack == NULL || (*stack)->next == NULL)
+        {
+                fprintf(stderr, "L%d: can't swap, stack too short\n", line_number);
+                exit(EXIT_FAILURE);
+                
+        }
+        
+        stack_t *top = *stack;
+        stack_t *second = top->next;
+        
+        top->next = second->next;
+        if (second->next != NULL)
+                second->next->prev = top;
+                
+        second->prev = NULL;
+        second->next = top;
+        top->prev = second;
+        *stack = second;
+}
