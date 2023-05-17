@@ -18,6 +18,7 @@ unsigned int line_number = 0;
 	{"pop", pop_func},
 	{"swap", swap_func},
 	{"add", add_func},
+    {"nop", nop_func},
 	{NULL, NULL}
 	};
 
